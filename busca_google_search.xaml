@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="busca_google_search" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="busca_google_search" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="out_logradouro_mymaps" Type="InOutArgument(sd:DataRow)" />
     <x:Property Name="in_busca_logradouro" Type="OutArgument(x:String)" />
@@ -115,7 +115,7 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="1224,1807" sap2010:WorkflowViewState.IdRef="Sequence_8">
+  <Sequence sap:VirtualizedContainerService.HintSize="1224,1883" sap2010:WorkflowViewState.IdRef="Sequence_8">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="html_class" />
     </Sequence.Variables>
@@ -124,7 +124,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign sap:VirtualizedContainerService.HintSize="570,114" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign sap:VirtualizedContainerService.HintSize="1040,114" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[in_busca_logradouro]</OutArgument>
       </Assign.To>
@@ -132,19 +132,19 @@
         <InArgument x:TypeArguments="x:String">[out_logradouro_mymaps(1).ToString]</InArgument>
       </Assign.Value>
     </Assign>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Browser Firefox: Google" sap:VirtualizedContainerService.HintSize="570,1670" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" OpenMode="IfNotOpen" ScopeGuid="bae85968-07f7-46b8-8f30-8a2e1a512124" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Browser Firefox: Google" sap:VirtualizedContainerService.HintSize="1040,1746" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" OpenMode="IfNotOpen" ScopeGuid="bae85968-07f7-46b8-8f30-8a2e1a512124" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="536,1430" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1006,1506" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'TEXTAREA APjFqb'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="502,286" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="bae85968-07f7-46b8-8f30-8a2e1a512124" Text="[in_busca_logradouro]" Version="V4">
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'TEXTAREA APjFqb'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="972,286" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="bae85968-07f7-46b8-8f30-8a2e1a512124" Text="[in_busca_logradouro]" Version="V4">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable BrowserURL="https://www.google.com/" CVScreenId="c0028722-f212-485e-93a8-1523270d36c7" CvElementArea="604, 434, 725, 62" CvType="InputBox" DesignTimeRectangle="664, 438, 504, 57" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='APjFqb' tag='TEXTAREA' /&gt;" FuzzySelectorArgument="&lt;webctrl id='APjFqb' tag='TEXTAREA' type='' class='gLFyf' aaname='Pesquisar' /&gt;" Guid="916b9127-3651-4a2b-aaaa-e585f1101c9d" InformativeScreenshot="d0dd67bccaf73d32399716591688c13c.png" ScopeSelectorArgument="&lt;html app='firefox.exe' title='Google' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive" />
               </uix:NTypeInto.Target>
@@ -159,7 +159,7 @@
                 </uix:VerifyExecutionTypeIntoOptions>
               </uix:NTypeInto.VerifyOptions>
             </uix:NTypeInto>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="2" DisplayName="Click 'Pesquisa Google'" sap:VirtualizedContainerService.HintSize="502,225" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="bae85968-07f7-46b8-8f30-8a2e1a512124" Timeout="5" Version="V4">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="2" DisplayName="Click 'Pesquisa Google'" sap:VirtualizedContainerService.HintSize="972,225" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="bae85968-07f7-46b8-8f30-8a2e1a512124" Timeout="5" Version="V4">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="https://www.google.com/" CVScreenId="c0028722-f212-485e-93a8-1523270d36c7" CvElementArea="787, 528, 180, 50" CvTextArea="809, 545, 136, 21" CvTextArgument="Pesquisa Google" CvType="Button" DesignTimeRectangle="790, 532, 175, 45" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;webctrl aria-role='button' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;form&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;center&amp;gt;input' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='button' type='submit' tag='INPUT' class='gNO89b' aaname='Pesquisa Google' check:text='Pesquisa Google' /&gt;" Guid="32654092-e9e6-494e-86ce-d0e67a01eb65" InformativeScreenshot="ae9533032343564dd29b7c9ee3912943.png" ScopeSelectorArgument="&lt;html app='firefox.exe' title='Google' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive" />
               </uix:NClick.Target>
@@ -174,37 +174,53 @@
                 </uix:VerifyExecutionOptions>
               </uix:NClick.VerifyOptions>
             </uix:NClick>
-            <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="class" DelayAfter="3" DisplayName="Get Attribute 'Av. Rio Negro, 683 - Do…'" sap:VirtualizedContainerService.HintSize="502,239" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_2" Result="[html_class]" ScopeIdentifier="bae85968-07f7-46b8-8f30-8a2e1a512124" Version="V4">
-              <uix:NGetAttributeGeneric.Target>
-                <uix:TargetAnchorable BrowserURL="https://www.google.com/search?q=av.+rio+negro%2C+683+-+dom+bosco+-+betim&amp;sca_esv=33eeff773bbaf247&amp;sxsrf=ADLYWIIRGLmU7qfdm-KUNIWdbRt4P6YJlA%3A1731714950897&amp;source=hp&amp;ei=ht83Z5CZM9-85OUP64yF8A8&amp;iflsig=AL9hbdgAAAAAZzftlt2-qiaoQaxFzfSFPsXVJtzUjXog&amp;oq=&amp;gs_lp=Egdnd3Mtd2l6IgAqAggAMgcQIxgnGOoCMgcQIxgnGOoCMgcQIxgnGOoCMgcQIxgnGOoCMgcQIxgnGOoCMgcQIxgnGOoCMgcQIxgnGOoCMgcQIxgnGOoCMgcQIxgnGOoCMgcQIxgnGOoCSLwJUABYAHABeACQAQCYAQCgAQCqAQC4AQHIAQCYAgGgAg6oAgqYAw6SBwExoAcA&amp;sclient=gws-wiz" CVScreenId="c7a53652-1034-468c-a800-baa710f0534d" DesignTimeRectangle="253, 833, 360, 36" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl class='aiAXrc' parentid='rso' tag='DIV' /&gt;" FuzzyAccuracy="1" Guid="097a6538-2399-447c-9b02-7e4cffe755ee" ImageBase64="" InformativeScreenshot="a640939e66352625c6411c6860ba6922.png" ScopeSelectorArgument="&lt;html app='firefox.exe' title='av. rio negro, 683 - dom bosco - betim - Pesquisa Google' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
-              </uix:NGetAttributeGeneric.Target>
-            </uix:NGetAttributeGeneric>
-            <If Condition="[html_class.Equals( &quot;aiAXrc&quot;)]" sap:VirtualizedContainerService.HintSize="502,618" sap2010:WorkflowViewState.IdRef="If_1">
-              <If.Then>
-                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,290" sap2010:WorkflowViewState.IdRef="Sequence_9">
-                  <Sequence.Variables>
-                    <Variable x:TypeArguments="x:String" Name="html_class" />
-                  </Sequence.Variables>
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="972,401" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,290" sap2010:WorkflowViewState.IdRef="Sequence_13">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="innerText" DelayAfter="1" DisplayName="Get Attribute 'Av. Rio Negro, 683 - Do…'" sap:VirtualizedContainerService.HintSize="382,230" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_1" Result="[in_busca_logradouro]" ScopeIdentifier="bae85968-07f7-46b8-8f30-8a2e1a512124" Version="V4">
+                  <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="class" DelayAfter="3" DisplayName="Get Attribute 'Av. Rio Negro, 683 - Do…'" sap:VirtualizedContainerService.HintSize="382,230" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_2" Result="[html_class]" ScopeIdentifier="bae85968-07f7-46b8-8f30-8a2e1a512124" Version="V4">
                     <uix:NGetAttributeGeneric.Target>
-                      <uix:TargetAnchorable BrowserURL="https://www.google.com/search?q=av.+rio+negro%2C+683+-+dom+bosco+-+betim&amp;sca_esv=33eeff773bbaf247&amp;sxsrf=ADLYWIIRGLmU7qfdm-KUNIWdbRt4P6YJlA%3A1731714950897&amp;source=hp&amp;ei=ht83Z5CZM9-85OUP64yF8A8&amp;iflsig=AL9hbdgAAAAAZzftlt2-qiaoQaxFzfSFPsXVJtzUjXog&amp;oq=&amp;gs_lp=Egdnd3Mtd2l6IgAqAggAMgcQIxgnGOoCMgcQIxgnGOoCMgcQIxgnGOoCMgcQIxgnGOoCMgcQIxgnGOoCMgcQIxgnGOoCMgcQIxgnGOoCMgcQIxgnGOoCMgcQIxgnGOoCMgcQIxgnGOoCSLwJUABYAHABeACQAQCYAQCgAQCqAQC4AQHIAQCYAgGgAg6oAgqYAw6SBwExoAcA&amp;sclient=gws-wiz" CVScreenId="c7a53652-1034-468c-a800-baa710f0534d" DesignTimeRectangle="253, 833, 360, 36" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl class='aiAXrc' parentid='rso' tag='DIV' /&gt;" FuzzyAccuracy="1" Guid="097a6538-2399-447c-9b02-7e4cffe755ee" ImageBase64="" InformativeScreenshot="a640939e66352625c6411c6860ba6922.png" ScopeSelectorArgument="&lt;html app='firefox.exe' title='av. rio negro, 683 - dom bosco - betim - Pesquisa Google' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                      <uix:TargetAnchorable BrowserURL="https://www.google.com/search?q=av.+rio+negro%2C+683+-+dom+bosco+-+betim&amp;sca_esv=33eeff773bbaf247&amp;sxsrf=ADLYWIIRGLmU7qfdm-KUNIWdbRt4P6YJlA%3A1731714950897&amp;source=hp&amp;ei=ht83Z5CZM9-85OUP64yF8A8&amp;iflsig=AL9hbdgAAAAAZzftlt2-qiaoQaxFzfSFPsXVJtzUjXog&amp;oq=&amp;gs_lp=Egdnd3Mtd2l6IgAqAggAMgcQIxgnGOoCMgcQIxgnGOoCMgcQIxgnGOoCMgcQIxgnGOoCMgcQIxgnGOoCMgcQIxgnGOoCMgcQIxgnGOoCMgcQIxgnGOoCMgcQIxgnGOoCMgcQIxgnGOoCSLwJUABYAHABeACQAQCYAQCgAQCqAQC4AQHIAQCYAgGgAg6oAgqYAw6SBwExoAcA&amp;sclient=gws-wiz" CVScreenId="c7a53652-1034-468c-a800-baa710f0534d" DesignTimeRectangle="253, 833, 360, 36" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl class='aiAXrc' parentid='rso' tag='DIV' /&gt;" FuzzyAccuracy="1" Guid="097a6538-2399-447c-9b02-7e4cffe755ee" ImageBase64="" ScopeSelectorArgument="&lt;html app='firefox.exe' title='av. rio negro, 683 - dom bosco - betim - Pesquisa Google' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="0" />
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
                     </uix:NGetAttributeGeneric.Target>
                   </uix:NGetAttributeGeneric>
                 </Sequence>
-              </If.Then>
-              <If.Else>
-                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="468,165" sap2010:WorkflowViewState.IdRef="Sequence_10">
+              </ui:CommentOut.Body>
+            </ui:CommentOut>
+            <uix:NCheckState DisplayName="Check App State 'DIV'" sap:VirtualizedContainerService.HintSize="972,532" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="bae85968-07f7-46b8-8f30-8a2e1a512124" Timeout="1" Version="V4">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,292" sap2010:WorkflowViewState.IdRef="Sequence_11">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_2">
+                  <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="innerText" DelayAfter="1" DisplayName="Get Attribute" sap:VirtualizedContainerService.HintSize="416,232" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_1" Result="[in_busca_logradouro]" ScopeIdentifier="bae85968-07f7-46b8-8f30-8a2e1a512124" Version="V4">
+                    <uix:NGetAttributeGeneric.Target>
+                      <uix:TargetAnchorable BrowserURL="https://www.google.com/search?q=av.+rio+negro%2C+683+-+dom+bosco+-+betim&amp;sca_esv=33eeff773bbaf247&amp;sxsrf=ADLYWIIRGLmU7qfdm-KUNIWdbRt4P6YJlA%3A1731714950897&amp;source=hp&amp;ei=ht83Z5CZM9-85OUP64yF8A8&amp;iflsig=AL9hbdgAAAAAZzftlt2-qiaoQaxFzfSFPsXVJtzUjXog&amp;oq=&amp;gs_lp=Egdnd3Mtd2l6IgAqAggAMgcQIxgnGOoCMgcQIxgnGOoCMgcQIxgnGOoCMgcQIxgnGOoCMgcQIxgnGOoCMgcQIxgnGOoCMgcQIxgnGOoCMgcQIxgnGOoCMgcQIxgnGOoCMgcQIxgnGOoCSLwJUABYAHABeACQAQCYAQCgAQCqAQC4AQHIAQCYAgGgAg6oAgqYAw6SBwExoAcA&amp;sclient=gws-wiz" CVScreenId="c7a53652-1034-468c-a800-baa710f0534d" DesignTimeRectangle="253, 833, 360, 36" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl class='aiAXrc' parentid='rso' tag='DIV' /&gt;" FuzzyAccuracy="1" Guid="097a6538-2399-447c-9b02-7e4cffe755ee" ImageBase64="" ScopeSelectorArgument="&lt;html app='firefox.exe' title='av. rio negro, 683 - dom bosco - betim - Pesquisa Google' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="0" />
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NGetAttributeGeneric.Target>
+                  </uix:NGetAttributeGeneric>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="468,167" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign sap:VirtualizedContainerService.HintSize="434,107" sap2010:WorkflowViewState.IdRef="Assign_2">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:String">[in_busca_logradouro]</OutArgument>
                     </Assign.To>
@@ -213,8 +229,17 @@
                     </Assign.Value>
                   </Assign>
                 </Sequence>
-              </If.Else>
-            </If>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.google.com/search?q=avenida+rio+negro%2C+683+-+dom.+bosco&amp;sca_esv=52b786e3c32e91aa&amp;sxsrf=ADLYWIJGIcQZCYPTAbVvlaQMFCGC0TUlrA%3A1732011650975&amp;ei=gmY8Z9SfO6nS1sQPz_2vyA8&amp;oq=&amp;gs_lp=Egxnd3Mtd2l6LXNlcnAiACoCCAAyBxAjGCcY6gIyBxAjGCcY6gIyBxAjGCcY6gIyBxAjGCcY6gIyBxAjGCcY6gIyBxAjGCcY6gIyBxAjGCcY6gIyBxAjGCcY6gIyBxAjGCcY6gIyBxAjGCcY6gIyFhAAGAMYtAIY5QIY6gIYjAMYjwHYAQEyFhAAGAMYtAIY5QIY6gIYjAMYjwHYAQEyFhAAGAMYtAIY5QIY6gIYjAMYjwHYAQEyFhAAGAMYtAIY5QIY6gIYjAMYjwHYAQEyFhAAGAMYtAIY5QIY6gIYjAMYjwHYAQEyFhAAGAMYtAIY5QIY6gIYjAMYjwHYAQEyFhAAGAMYtAIY5QIY6gIYjAMYjwHYAQEyFhAAGAMYtAIY5QIY6gIYjAMYjwHYAQEyFhAAGAMYtAIY5QIY6gIYjAMYjwHYAQEyFhAuGAMYtAIY5QIY6gIYjAMYjwHYAQFIihZQ8wpY8wpwBHgAkAEAmAEAoAEAqgEAuAEByAEA-AEBmAIEoAInqAIUwgILEAAYgAQYsAMYogSYAxWIBgGQBgS6BgYIARABGAuSBwE0oAcA&amp;sclient=gws-wiz-serp" DesignTimeRectangle="188, 285, 650, 338" DesignTimeScaleFactor="1" ElementType="Icon" FuzzySelectorArgument="&lt;webctrl parentid='lu_map' tag='IMG' type='' class='YQ4gaf' aaname='Mapa de Av. Rio Negro, 683 - Dom Bosco, Betim - MG, 32676-275' /&gt;" Guid="70e564de-3fbb-4399-a7a4-269fd3f5a3f5" InformativeScreenshot="5f23ad3149efcbbfc411007ebf8d2afe.png" ScopeSelectorArgument="&lt;html app='firefox.exe' title='avenida rio negro, 683 - dom. bosco - Pesquisa Google' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target CVScreenId="216f913a-3a16-4296-a019-55bf1bc1d850" CvElementArea="701, 632, 48, 47" CvType="Icon" DesignTimeRectangle="703, 635, 44, 44" FuzzyAccuracy="1" FuzzySelectorArgument="&lt;webctrl type='' parentid='rso' tag='DIV' class='niO4u' aaname='' /&gt;" Guid="da410fe5-608c-4d18-8f4f-aad15c2ec2c7" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAARuSURBVGhD7Zp3TxRBGMb9JtzBcSAISIkFEMWI5Rv4t9/B2GKJhSJg+QBGY4IhFhQLivpRTCyxxCiWiGKJvM5vll2GZfZuG6eb+MeT25vyzvPMvGX2cquqqqoky/gvAOTzeWlobJS2jnbp7O6Snt4tsrVvm2zbsV2DZ9roYwxjmWOzFRWJBEBkQ+dGTbKzu1ta29t0W6G2ILl8zhvHM230MYaxzGEubabNqIglYE1Tk2zaslm6ejZJc0vzErJhwRzmYgNb2LSNK4dIAorFonYDFk26cyawhU1ss4ZtTBBCC2huadHH3rJ2rbU/DWCbNVjL1m9DKAEEHsdcrKuz9qcJ1mAt1rT1+1FWQMe6dTro4vh5XLAWa7K2rd9ESQFOWuy29lUCrF3uJAIF4IccZSV33g/WhkOpmLAKIBMQTJXw+XKAg+YSkJ2sAkhnK5ltogIucLL1LRNAQSEn+9v/NuBkK3bLBOBzSYpULufccVa39cqBy680eDb74gBOcPO3LxHgVkSzLQpcgvWtPbL3whM5M/1bg2fazDFxYLsBLBHA5Yr7idkWFovkN8u+S8/k/GORgVuzGjzTRp85NirgBkezzRPA9ZZoj5M2l5C/+FTOPYL8Fzl997tGv3o+91CJuJhMBNzgaF7FPQEcTZyiVY780J05Gb73Q4Zuf5OzD+cTi4Cj6UaeACoed3X3exjYyc9q0mBQkUbEqYnPcnh8Rkbu/dQxkcSd4GhWZ08AedYfIKWQy1frT5N8/01n50emfmkMQ1i5zvHxN9LWu1sOXXkro/ctIhZshYHjKYs1wRPAKx9vTe73MCCzQMQjr1xl8PacnLz+Xk7dmNGf/ROf5NiVl3p80/pdcuTqByXil+NOl55rG367pQBHuLrfPQG8t0YJ4Ib2rTo9kmEGJ2flNC6jsH7nHikUG6SmdrXUFOo0qgtFFXg1zryOPjk49kaG1UkhHBvY8tsPAhzh6n73BBDd7nMY7FcF6sz0vOfzuMyJa+8kX+0QhXRNbZCA1zKqxg8o4djAlmm7HEyuqQnA33GbQpGdr5ejYy+U+3xUAfzR50IzKqXOq1P7mq6AJC40MPlFnwA+n1M7zW5DfPQBldgI4rG32vcHIL9Q4CK7UC7AhZIG8ZAKXk6gvrFVAzEENafjplF2W++8Is8cJxOlFMTJ0qgjAmInr5N9ZjRxt5AhZGTqp64LHnmVelNNo2kVMk4Cd/LIL3wCKvQy8mkVMkdZyleJBeI8p0EeBF4lVvIylxb5kpc5kOnrNOBoMv1CAzL9Sgky/1IPyLOZ/VkFZP6HLZDpnxZdUPHiFLe0wNpm1bWhpADAT9wYquRJsBZrsrat30RZAYBd4CgrEROswVrldt5FKAEAPySYVjI7YZs1Svm8H6EFADIB6cxWEZPAvQFgOyjbBCGSABcUFI6ZRbmfxIkP5jAXG9iyFakwiCXABTvH5YpjJ+i4q9PGW5Mpimfa6GMMY5nD3KQnmUiAC663EHHSbob+avAvIOMCquQPzsfZ5C7Dv7cAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NCheckState.Target>
+            </uix:NCheckState>
           </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>
